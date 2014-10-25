@@ -60,3 +60,16 @@ $small: 1.5
     &.selected
       background: $yellow01 
       cursor: auto 
+
+#characters
+  .character
+    display: none
+    $img: "chara00.png"
+    position: absolute
+    +trbl( auto, 0, 0, auto )
+    +image-size( $img )
+
+    &.show
+      display: block
+      +transform-origin( 100%, 100% )
+      +animation( big 0.4s linear 0.8s infinite )

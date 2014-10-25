@@ -12,6 +12,10 @@
       second: 0,
       third: 2
     };
+    var dramSound = new Audio('audio/dram.mp3'); 
+    var clickSound = new Audio('audio/click.mp3');
+    //var ngSound = new Audio('audio/ng.mp3'); 
+    var okSound = new Audio('audio/ok.mp3'); 
 
     /*-----------------------------
       EVENT LISTENER 
@@ -42,6 +46,16 @@
               'background-position': '0 ' + 
                 ( -1 * JOB[ _class ] * slotHeight ) + 'px'
             } );
+            clickSound.currentTime = 0;
+            clickSound.play();
+            if ( $( '#buttons .selected' ).
+                  size() === 3 ){
+                    $( '#characters .ok' ).addClass( 'show' );
+                    dramSound.pause();
+                    setTimeout( function(){
+                      okSound.play();
+                    }, 800 );
+            }
           }
         } );
       };
@@ -57,6 +71,7 @@
     for ( var i = 0; i < 3; i++ ){
       _rotate( $( '#slot .' + slotArr[ i ] ), -slotTotalHeight, 100 * i );
     }
+    dramSound.play();
   });
   global.namespace = ns;
 })( this, document, jQuery, this.namespace );
