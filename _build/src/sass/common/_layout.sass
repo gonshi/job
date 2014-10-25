@@ -1,20 +1,63 @@
+$yellow00: #ffdd44
+$yellow01: #d2b41e
+
+#title
+  $img: "logo.png"
+  +image-text( $img )
+  margin: 20px auto 0
+
 #slot
   position: absolute
-  +trbl( 0, 0, 0, 0 )
+  +trbl( 0, 0, auto, 0 )
   width: 1200px
-  height: 288px
-  margin: auto
+  height: 432px
+  margin: 280px auto 0
+  box-shadow: 0 0 8px 0 #777
 
   .first,
   .second,
   .third
     float: left
     width: 400px
-    height: 288px
+    height: 432px
     overflow: hidden
+    background: #fff
+
+  .first,
+  .second
+    border-right: 2px solid #ccc
 
   $slotArr: "first", "second", "third"
   @for $i from 1 through 3
     .#{ nth( $slotArr, $i ) }
       $img: "#{ nth( $slotArr, $i ) }.png"
       +bg( $img, 100% auto )
+
+#buttons
+  position: absolute
+  top: 50%
+  left: 0
+  right: 0
+  width: 1200px
+  height: 100px
+  margin: 280px auto 0 
+
+  .button
+    float: left
+    width: 300px
+    height: 100px
+    margin: 0 50px 
+    cursor: pointer
+
+    background: $yellow00 
+    border-radius: 50px
+    box-shadow: 5px 8px 0 0 $yellow01 
+
+    &:active,
+    &.selected
+      +transform( translateX( 5px ) translateY( 8px) )
+      box-shadow: none 
+
+    &.selected
+      background: $yellow01 
+      cursor: auto 
