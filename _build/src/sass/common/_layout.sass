@@ -1,5 +1,6 @@
 $yellow00: #ffdd44
 $yellow01: #d2b41e
+$small: 1.5
 
 #title
   $img: "logo.png"
@@ -8,18 +9,18 @@ $yellow01: #d2b41e
 
 #slot
   position: absolute
-  +trbl( 0, 0, auto, 0 )
-  width: 1200px
-  height: 432px
-  margin: 280px auto 0
+  +trbl( 280px, 0, auto, 0 )
+  width: 1200px / $small
+  height: 432px / $small
+  margin: 0 auto
   box-shadow: 0 0 8px 0 #777
 
   .first,
   .second,
   .third
     float: left
-    width: 400px
-    height: 432px
+    width: 400px / $small
+    height: 432px / $small
     overflow: hidden
     background: #fff
 
@@ -35,18 +36,16 @@ $yellow01: #d2b41e
 
 #buttons
   position: absolute
-  top: 50%
-  left: 0
-  right: 0
-  width: 1200px
-  height: 100px
-  margin: 280px auto 0 
+  +trbl( 580px, 0, auto, 0 )
+  width: 1200px / $small
+  height: 100px / $small
+  margin: 0 auto
 
   .button
     float: left
-    width: 300px
-    height: 100px
-    margin: 0 50px 
+    width: 300px / $small
+    height: 100px / $small
+    margin: 0 ( 50px / $small )
     cursor: pointer
 
     background: $yellow00 

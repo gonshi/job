@@ -3,8 +3,9 @@
   ns = ns || {};
 
   $(function() {
+    var small = 1.5;
     var slotArr = [ 'first', 'second', 'third' ];
-    var slotHeight = 438;
+    var slotHeight = 438 / small;
     var slotTotalHeight = slotHeight * 3;
     var JOB = {
       first: 1,
